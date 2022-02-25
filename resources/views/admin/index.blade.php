@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    <p>.</p>
+    <p>ServiceSchool</p>
 @stop
 
 @section('css')
