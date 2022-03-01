@@ -12,6 +12,7 @@ Route::resource('roles', App\Http\Controllers\admin\RoleController::class)->name
 
 Route::resource('alumnos', \App\Http\Controllers\admin\AlumnosController::class)->names('admin.alumnos');
 
+//routes of pasos a seguir de registros
 Route::group(['prefix'=>'paso'], function(){
 
     Route::resource('uno', \App\Http\Controllers\admin\PasoUnoController::class)->names('admin.pasos');
