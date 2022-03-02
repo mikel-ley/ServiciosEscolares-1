@@ -3,14 +3,15 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <a href="{{route('admin.pasos.tres.index')}}" class="btn btn-secondary btn-sm float-right">Paso 3</a>
-    <a href="{{route('admin.pasos.dos.index')}}" class="btn btn-secondary btn-sm float-right">Paso 2</a>
-    <a href="{{route('admin.pasos.index')}}" class="btn btn-secondary btn-sm float-right">Paso 1</a>
 
+<x-adminlte-progress id="pbDinamic" value="50" theme="lighblue" animated with-label/>
     <h1>Externo</h1>
 @stop
 
 @section('content')
+<a href="{{ route('admin.pasos.tres.index') }}"><x-adminlte-button label="Paso Tres" theme="secondary" icon="fas fa-info-circle"/></a>
+    <a href="{{ route('admin.pasos.dos.index') }}"><x-adminlte-button label="Paso Dos" theme="secondary" icon="fas fa-info-circle"/></a>
+    <a href="{{ route('admin.pasos.index') }}"><x-adminlte-button label="Paso Uno" theme="secondary" icon="fas fa-info-circle"/></a>
 
 
 
