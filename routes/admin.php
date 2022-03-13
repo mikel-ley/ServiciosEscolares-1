@@ -18,3 +18,7 @@ Route::group(['prefix'=>'paso'], function(){
     Route::resource('dos', \App\Http\Controllers\admin\PasoDosController::class)->names('admin.pasos.dos');
     Route::resource('tres', \App\Http\Controllers\admin\PasoTresController::class)->names('admin.pasos.tres');
 });
+
+Route::resource('uploads', \App\Http\Controllers\admin\FilesController::class)->names('admin.uploads');
+Route::get('pasos', [App\Http\Controllers\admin\FilesController::class, 'Files'])->name('admin.pasos.index');
+Route::get('uploads/{uploads}/download', [App\Http\Controllers\Admin\FilesController::class, 'download'])->name('admin.download');

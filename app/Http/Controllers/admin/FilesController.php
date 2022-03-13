@@ -7,9 +7,13 @@ use Illuminate\Http\Request;
 use App\Models\File;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+//use RealRashid\SweetAlert\Facades\Alert;
+Use Alert;
 
-class PasoUnoController extends Controller
+class FilesController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      *
@@ -18,16 +22,15 @@ class PasoUnoController extends Controller
     public function index()
     {
         //$file = File::all();
-        //$file = File::whereUserId(Auth::id())->latest()->get();
-        //return view('admin.pasos.index',compact('file'));
+        $file = File::whereUserId(Auth::id())->latest()->get();
+        return view('admin.uploads.index',compact('file'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    public function Files(){
+        $file = File::all();
+        return view('admin.pasos.index',compact('file'));
+    }
+
     public function store(Request $request)
     {
         $max_size = (int)ini_get('upload_max_filesize') * 10240;
@@ -52,6 +55,14 @@ class PasoUnoController extends Controller
             Alert::error('¡¡¡ERROR!!!', 'Sube Uno o Varios Archivos');
             return back();
         }
+
+    }
+
+    public function download(File $file, $id){
+        $file = File::whereId($id)->firstOrFail();
+        return response()->download('storage' . '/' . Auth::id() . '/' . $file->name);
+        //dd('storage' . '/' . Auth::id() . '/' . $file->name);
+        //return Storage::download('storage' . '/' . Auth::id() . '/' . $file->name);
     }
 
     /**
@@ -70,17 +81,6 @@ class PasoUnoController extends Controller
         }else{
             return redirect('/storage' . '/' . $user_id . '/' . $file->name);
         }
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
     }
 
     /**

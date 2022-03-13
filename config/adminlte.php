@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 return [
 
@@ -252,7 +252,7 @@ return [
         ],
 
         [
-            'text'   => 'Usuarios',
+            'text'   => 'Estudiantes',
             'route'  => 'admin.users.index',
             'icon'   => 'fas fa-fw fa-users',
             'can'  => 'admin.users.index',
@@ -262,6 +262,11 @@ return [
             'route' => 'admin.roles.index',
             'icon'  => 'fas fa-fw fa-users-cog',
             'can'  =>  'admin.roles.index',
+        ],
+        [
+            'text' => 'Uploads',
+            'route' => 'admin.uploads.index',
+            'icon'  => 'fas fa-fw fa-users-cog',
         ],
         [
             'text'    => 'multilevel',

@@ -3,13 +3,15 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-<a href="{{route('admin.alumnos.index')}}" class="btn btn-outline-success btn-sm float-right"><i class="fa fa-check"></i></a>
+<a href="#" class="float-right" data-toggle="modal" data-target="#ModalCreate"><img style="width: 50px" src="{{ asset('favicons/upload-file.png') }}"></a>
 
-<p style="text-align: center; font-size: 20px">Lo primero que debes hacer es descargar los formatos y llenarlos con la información que se solicita.</br> <strong>Una ves descargado tu formato da click en el boton verde.</strong></p>
 
+@include('admin.uploads.modal.create')
 @stop
 
 @section('content')
+
+<h1>Subir Archivos</h1>
 @if(session('info'))
     <div class="alert alert-success">
         <strong>{{session('info')}}</strong>
@@ -20,9 +22,8 @@
     <table class="table table-striped">
         <thead>
             <th>ID</th>
-            <th>Archivo</th>
-            <th>Ver</th>
-            <th>Descargar</th>
+            <th>Nombre De Archivo</th>
+            <th>Accion</th>
         </thead>
         <tbody>
 
@@ -31,10 +32,12 @@
                 <td scope="row">{{$File->id}} </td>
                 <td>{{$File->name}} </td>
                 <td>
-                    <a target="_blank" href="{{ route('admin.pasos.show',$File->id) }}" class="btn btn-outline-secondary"><i class="fa fa-eye"></i></a>
-                </td>
-                <td>
-                    <a href="{{ route('admin.download',$File->id) }}" style="justify-content: center;" class="btn btn-outline-primary"><i class="fa fa-download"></i></a>
+                    <a target="_blank" href="{{ route('admin.uploads.show',$File->id) }}" class="btn btn-outline-secondary">Ver</a>
+                    <form action="{{ route('admin.uploads.destroy', $File->id) }}" class="d-inline" method="POST" >
+                        @method('DELETE')
+                        @csrf
+                        <button type="submit" class="btn btn-outline-danger">Eliminar</button>
+                    </form>
                 </td>
             </tr>
 
