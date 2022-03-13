@@ -269,6 +269,11 @@ return [
             'icon'  => 'fas fa-fw fa-users-cog',
         ],
         [
+            'text' => 'Downloads',
+            'route' => 'admin.pasos.externo',
+            'icon'  => 'fas fa-fw fa-users-cog',
+        ],
+        [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [

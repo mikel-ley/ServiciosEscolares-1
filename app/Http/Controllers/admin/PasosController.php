@@ -14,7 +14,7 @@ class PasosController extends Controller
      */
     public function index()
     {
-        return view('admin.pasos.index');
+        //return view('admin.pasos.index');
     }
 
     /**

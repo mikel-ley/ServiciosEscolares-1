@@ -31,7 +31,7 @@
                 <td scope="row">{{$File->id}} </td>
                 <td>{{$File->name}} </td>
                 <td>
-                    <a target="_blank" href="{{ route('admin.pasos.show',$File->id) }}" class="btn btn-outline-secondary"><i class="fa fa-eye"></i></a>
+                    <a target="_blank" href="{{ route('admin.uploads.show',$File->id) }}" class="btn btn-outline-secondary"><i class="fa fa-eye"></i></a>
                 </td>
                 <td>
                     <a href="{{ route('admin.download',$File->id) }}" style="justify-content: center;" class="btn btn-outline-primary"><i class="fa fa-download"></i></a>

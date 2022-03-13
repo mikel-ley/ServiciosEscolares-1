@@ -13,6 +13,7 @@
                         <th>Nombre</th>
                         <th>Matricula</th>
                         <th>Carrera</th>
+                        <th>Modalidad</th>
                         <th>Email</th>
                         <th></th>
                     </tr>
@@ -24,6 +25,7 @@
                             <td>{{$user->name}}</td>
                             <td>{{ $user->matricula }}</td>
                             <td>{{ $user->carrera }}</td>
+                            <td>{{ $user->modalidad }}</td>
                             <td>{{$user->email}}</td>
                             <td width="10px;">
                                 <a class="btn btn-primary" href="{{ route('admin.users.edit',$user) }}">Editar</a>

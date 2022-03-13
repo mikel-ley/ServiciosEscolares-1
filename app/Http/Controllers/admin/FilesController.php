@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 //use RealRashid\SweetAlert\Facades\Alert;
 Use Alert;
+use App\Models\Externo;
 
 class FilesController extends Controller
 {
@@ -29,6 +30,11 @@ class FilesController extends Controller
     public function Files(){
         $file = File::all();
         return view('admin.pasos.index',compact('file'));
+    }
+
+
+    public function Externo(){
+        return view('admin.pasos.externo');
     }
 
     public function store(Request $request)

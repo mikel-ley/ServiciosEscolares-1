@@ -71,6 +71,24 @@
             @enderror
         </div>
 
+        {{-- Modalidad --}}
+        <div class="input-group mb-3">
+            <input type="text" name="modalidad" class="form-control @error('modalidad') is-invalid @enderror"
+                   value="{{ old('modalidad') }}" placeholder="Modalidad" autofocus>
+
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fa fa-school"></span>
+                </div>
+            </div>
+
+            @error('modalidad')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+
         {{-- Email field --}}
         <div class="input-group mb-3">
             <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"

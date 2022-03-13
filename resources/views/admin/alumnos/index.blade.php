@@ -3,8 +3,6 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-
-<x-adminlte-progress id="pbDinamic" value="50" theme="lighblue" animated with-label/>
     <h1>Externo</h1>
 @stop
 
