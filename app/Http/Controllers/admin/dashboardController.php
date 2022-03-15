@@ -12,6 +12,7 @@ class dashboardController extends Controller
 
         $cant_users = User::count();
 
+
         return view('admin.index',compact('cant_users'));
     }
 }
