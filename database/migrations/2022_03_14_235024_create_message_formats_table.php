@@ -26,7 +26,7 @@ return new class extends Migration
 
             $table->string('subject');
             $table->text('body');
-            $table->string('file');
+            //$table->string('file');
             
             $table->timestamps();
         });

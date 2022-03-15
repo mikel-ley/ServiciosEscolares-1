@@ -16,7 +16,7 @@ return [
 
     'title' => '',
     'title_prefix' => '',
-    'title_postfix' => '| DevelopersDesigningCompany',
+    'title_postfix' => '| Servicio Social',
 
     /*
     |--------------------------------------------------------------------------
@@ -45,12 +45,12 @@ return [
     |
     */
 
-    'logo' => '<b>Developers</b><b>Designing</b>Company',
-    'logo_img' => 'vendor/adminlte/dist/img/profile.png',
+    'logo' => '<b>Servicio</b>Social',
+    'logo_img' => 'vendor/adminlte/dist/img/SERVICIOLogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'DevelopersDesigningCompany',
+    'logo_img_alt' => 'Servicio Social',
 
     /*
     |--------------------------------------------------------------------------

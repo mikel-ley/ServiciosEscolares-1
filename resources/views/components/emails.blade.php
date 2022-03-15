@@ -1,9 +1,11 @@
 <div class="py-12">
     <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-        <div class="p-4 overflow-hidden bg-white shadow-xl sm:rounded-lg">
+        <div class="p-4 overflow-hidden bg-white shadow-xl sm:rounded-lg"> 
+            
+            <form action="{{ route('messages.store') }}" method="post" enctype="multipart/form-data">
 
-            <form action="{{route('messages.store')}}" method="POST">
-            @csrf
+                {{csrf_field()}}
+                {{method_field('put')}}
 
             <div class="mb-4">
                 <x-jet-label>
@@ -14,6 +16,7 @@
                     value="{{old('name')}}"
                     class="w-full form-control"
                     placeholder="Ingrese el Nombre de quien envia la notificacion"
+                    required
                     name="name"/>
 
                 <x-jet-input-error for="name"/>
@@ -28,6 +31,7 @@
                     value="{{old('subject')}}"
                     class="w-full form-control"
                     placeholder="Ingrese el Asunto"
+                    required
                     name="subject"/>
 
                 <x-jet-input-error for="subject"/>
@@ -41,6 +45,7 @@
                 <textarea class="w-full form-control"
                     name="body"
                     placeholder="Escriba su Mensaje"
+                    required
                     rows="4">{{old('body')}}</textarea>
 
                     <x-jet-input-error for="body"/>
@@ -65,7 +70,7 @@
             <x-jet-button>
                 Enviar
             </x-jet-button>
-            </form>
+            {!! Form::close() !!}
         </div>
     </div>
 </div>

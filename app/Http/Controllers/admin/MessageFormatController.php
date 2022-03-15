@@ -41,7 +41,7 @@ class MessageFormatController extends Controller
             'name' =>'required|min:10',
             'subject' => 'required|min:10',
             'body' => 'required|min:10',
-            'file' => 'required|min:pdf,doc,docx,xml,xlx',
+            //'file' => 'required|file|mimes:ppt,pptx,doc,docx,xlsx|max:204800,csv,txt,xlx,xls,pdf|max:2048',
             'to_user_id' => 'required|exists:users,id',
         ]);
 
@@ -49,13 +49,13 @@ class MessageFormatController extends Controller
             'name' => $request->name,
             'subject' => $request->subject,
             'body' => $request->body,
-            'file' => $request->fiel,
+            //'file' => $request->file,
             'from_user_id' => auth()->id(),
             'to_user_id' => $request->to_user_id,
         ]);
 
         $user = User::find($request->to_user_id);
-        $user->notify(new MessageSend($message));
+        $user->notify(new MessageFormat($message));
 
         $request->session()->flash('flash.banner', 'Tu mensaje se Envio Exitosamente!!!');
         $request->session()->flash('flash.bannerStyle', 'success');
