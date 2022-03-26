@@ -273,6 +273,13 @@ return [
             'route' => 'admin.pasos.externo',
             'icon'  => 'fas fa-fw fa-users-cog',
         ],
+
+        [
+            'text' => 'Notificaciones',
+            'route'  => 'admin.dashboard',
+            'icon'    => 'fas fa-bell',
+            //'can' => 'admin.dashboard'
+        ],
         [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',

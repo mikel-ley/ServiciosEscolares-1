@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\MessageFormat;
 use App\Models\User;
+use App\Notifications\MessageFormatSent;
 
 class MessageFormatController extends Controller
 {
@@ -41,7 +42,7 @@ class MessageFormatController extends Controller
             'name' =>'required|min:10',
             'subject' => 'required|min:10',
             'body' => 'required|min:10',
-            //'file' => 'required|file|mimes:ppt,pptx,doc,docx,xlsx|max:204800,csv,txt,xlx,xls,pdf|max:2048',
+            'file' => 'required|file|mimes:ppt,pptx,doc,docx,xlsx,txt,xlx,xls,pdf|min:1024',
             'to_user_id' => 'required|exists:users,id',
         ]);
 
@@ -49,13 +50,13 @@ class MessageFormatController extends Controller
             'name' => $request->name,
             'subject' => $request->subject,
             'body' => $request->body,
-            //'file' => $request->file,
+            'file' => $request->file,
             'from_user_id' => auth()->id(),
             'to_user_id' => $request->to_user_id,
         ]);
 
         $user = User::find($request->to_user_id);
-        $user->notify(new MessageFormat($message));
+        $user->notify(new MessageFormatSent($message));
 
         $request->session()->flash('flash.banner', 'Tu mensaje se Envio Exitosamente!!!');
         $request->session()->flash('flash.bannerStyle', 'success');

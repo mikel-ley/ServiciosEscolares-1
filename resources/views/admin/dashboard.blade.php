@@ -1,5 +1,9 @@
 <x-app-layout>
 
+    <x-slot name="title">
+        Dashboard
+    </x-slot>
+
     <div class="py-12">
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
             <div class="p-4 overflow-hidden bg-white shadow-xl sm:rounded-lg">
