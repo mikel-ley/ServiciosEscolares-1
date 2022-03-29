@@ -22,8 +22,8 @@ class FilesController extends Controller
      */
     public function index()
     {
-        //$file = File::all();
-        $file = File::whereUserId(Auth::id())->latest()->get();
+        $file = File::all();
+        //$file = File::whereUserId(Auth::id())->latest()->get();
         return view('admin.uploads.index',compact('file'));
     }
 
@@ -42,15 +42,13 @@ class FilesController extends Controller
         $max_size = (int)ini_get('upload_max_filesize') * 10240;
 
         $files = $request->file('files');
-        $user_id = Auth::id();
 
         if ($request->hasFile('files') ) {
 
         foreach ($files as $file) {
-            if (Storage::putFileAs('public/' . $user_id . '/', $file, $file->getClientOriginalName())) {
+            if (Storage::putFileAs('public/Docentes' . '/', $file, $file->getClientOriginalName())) {
                 File::create([
                     'name' => $file->getClientOriginalName(),
-                    'user_id' => $user_id
                 ]);
             }
         }
@@ -66,7 +64,7 @@ class FilesController extends Controller
 
     public function download(File $file, $id){
         $file = File::whereId($id)->firstOrFail();
-        return response()->download('storage' . '/' . Auth::id() . '/' . $file->name);
+        return response()->download('storage/Docentes' . '/' . $file->name);
         //dd('storage' . '/' . Auth::id() . '/' . $file->name);
         //return Storage::download('storage' . '/' . Auth::id() . '/' . $file->name);
     }
