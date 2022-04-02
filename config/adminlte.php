@@ -267,6 +267,7 @@ return [
             'text' => 'Uploads',
             'route' => 'admin.uploads.index',
             'icon'  => 'fas fa-fw fa-users-cog',
+            'can'  =>  'admin.uploads.index',
         ],
         [
             'text' => 'Downloads',

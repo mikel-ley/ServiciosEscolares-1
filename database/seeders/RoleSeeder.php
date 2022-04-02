@@ -33,5 +33,14 @@ class RoleSeeder extends Seeder
         Permission::create(['name'=>'admin.roles.create', 'description' => 'Crear Roles'])->syncRoles([$role_admin]);
         Permission::create(['name'=>'admin.roles.edit', 'description' => 'Editar Roles'])->syncRoles([$role_admin]);
         Permission::create(['name'=>'admin.roles.destroy', 'description' => 'Eliminar Roles'])->syncRoles([$role_admin]);
+
+        Permission::create(['name'=>'admin.uploads.index', 'description' => 'Ver listado de Archivos'])->syncRoles([$role_admin]);
+        Permission::create(['name'=>'admin.uploads.create', 'description' => 'Subir Archivos'])->syncRoles([$role_admin]);
+        Permission::create(['name'=>'admin.uploads.edit', 'description' => 'Editar archivo'])->syncRoles([$role_admin]);
+        Permission::create(['name'=>'admin.uploads.destroy', 'description' => 'Eliminar File'])->syncRoles([$role_admin]);
+
+        Permission::create(['name'=>'admin.pasos.index', 'description' => 'Ver listado de pasos'])->syncRoles([$role_admin]);
+        Permission::create(['name'=>'admin.pasos.externo', 'description' => 'ver listado de externo'])->syncRoles([$role_admin]);
+
     }
 }

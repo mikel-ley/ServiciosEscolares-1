@@ -14,6 +14,11 @@ use App\Models\Externo;
 class FilesController extends Controller
 {
 
+    public function __construct(){
+        $this->middleware('can:admin.uploads.index')->only('index');
+        $this->middleware('can:admin.uploads.edit')->only('edit','update');
+    }
+
 
     /**
      * Display a listing of the resource.
