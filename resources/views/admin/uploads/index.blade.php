@@ -32,7 +32,7 @@
                 <td scope="row">{{$File->id}} </td>
                 <td>{{$File->name}} </td>
                 <td>
-                    <a target="_blank" href="{{ route('admin.uploads.show',$File->id) }}" class="btn btn-outline-secondary">Ver</a>
+                    
                     <form action="{{ route('admin.uploads.destroy', $File->id) }}" class="d-inline" method="POST" >
                         @method('DELETE')
                         @csrf

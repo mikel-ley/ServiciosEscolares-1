@@ -10,6 +10,5 @@ class File extends Model
     use HasFactory;
     protected $fillable = [
         'name',
-        'user_id'
     ];
 }

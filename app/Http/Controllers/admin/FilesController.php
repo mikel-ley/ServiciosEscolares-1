@@ -16,7 +16,10 @@ class FilesController extends Controller
 
     public function __construct(){
         $this->middleware('can:admin.uploads.index')->only('index');
-        $this->middleware('can:admin.uploads.edit')->only('edit','update');
+        $this->middleware('can:admin.uploads.store')->only('store');
+
+
+        $this->middleware('can:admin.pasos.externo')->only('destroy');
     }
 
 
@@ -86,9 +89,9 @@ class FilesController extends Controller
         $user_id = Auth::id();
 
         if ($file->user_id == $user_id) {
-            return redirect('/storage' . '/' . $user_id . '/' . $file->name);
+            return redirect('/storage' . '/' . 'Docentes' . '/' . $file->name);
         }else{
-            return redirect('/storage' . '/' . $user_id . '/' . $file->name);
+            return redirect('/storage' . '/' . 'Docentes' . '/' . $file->name);
         }
     }
 
@@ -113,7 +116,7 @@ class FilesController extends Controller
     public function destroy($id)
     {
         $file = File::whereId($id)->firstOrFail();
-        unlink(public_path('storage' . '/' . Auth::id() . '/' . $file->name));
+        unlink(public_path('storage' . '/' . 'Docentes' . '/' . $file->name));
         $file->delete();
 
         Alert::info('¡¡¡ATENCION!!!', 'El Archivo Fue Eliminado Exitosamente!!!');

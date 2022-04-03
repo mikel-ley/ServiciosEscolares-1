@@ -35,12 +35,20 @@ class RoleSeeder extends Seeder
         Permission::create(['name'=>'admin.roles.destroy', 'description' => 'Eliminar Roles'])->syncRoles([$role_admin]);
 
         Permission::create(['name'=>'admin.uploads.index', 'description' => 'Ver listado de Archivos'])->syncRoles([$role_admin]);
-        Permission::create(['name'=>'admin.uploads.create', 'description' => 'Subir Archivos'])->syncRoles([$role_admin]);
+        Permission::create(['name'=>'admin.uploads.store', 'description' => 'Subir Archivos'])->syncRoles([$role_admin]);
         Permission::create(['name'=>'admin.uploads.edit', 'description' => 'Editar archivo'])->syncRoles([$role_admin]);
         Permission::create(['name'=>'admin.uploads.destroy', 'description' => 'Eliminar File'])->syncRoles([$role_admin]);
 
         Permission::create(['name'=>'admin.pasos.index', 'description' => 'Ver listado de pasos'])->syncRoles([$role_admin]);
-        Permission::create(['name'=>'admin.pasos.externo', 'description' => 'ver listado de externo'])->syncRoles([$role_admin]);
+
+        Permission::create(['name'=>'admin.dashboard', 'description' => 'Enviar Notificaciones'])->syncRoles([$role_admin]);
+
+        Permission::create(['name'=>'admin.pasos.externo', 'description' => 'Ver listado de Descargas'])->syncRoles([$role_admin]);
+
+        Permission::create(['name'=>'admin.pasos.dos.show', 'description' => 'Ver listado de Descargas'])->syncRoles([$role_admin]);
+
+        Permission::create(['name'=>'admin.externo.download', 'description' => 'Descargar Files'])->syncRoles([$role_admin]);
+        Permission::create(['name'=>'admin.pasos.dos.destroy', 'description' => 'Eliminar Files'])->syncRoles([$role_admin]);
 
     }
 }
