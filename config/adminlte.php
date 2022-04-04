@@ -273,18 +273,14 @@ return [
             'text' => 'Bajar archivos ↓',
             'route' => 'admin.pasos.externo',
             'icon'  => 'fas fa-fw fa-users-cog',
+            'can'  =>  'admin.pasos.externo',
         ],
 
         [
             'text' => 'Notificaciones',
             'route'  => 'admin.dashboard',
             'icon'    => 'fas fa-bell',
-            //'can' => 'admin.dashboard'
-        ],
-       [
-            'text'    => '',
-            'icon'    => '',
-            
+            'can' => 'admin.dashboard'
         ],
         
     ],
