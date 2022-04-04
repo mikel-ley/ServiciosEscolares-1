@@ -245,32 +245,32 @@ return [
         ['header' => 'account_settings'],
 
         [
-            'text' => 'Dashboard',
+            'text' => 'Inicio',
             'route'  => 'admin.home',
             'icon' => 'fas fa-fw fa-tachometer-alt',
             'can'  => 'admin.home',
         ],
 
         [
-            'text'   => 'Estudiantes',
+            'text'   => 'Lista de usuarios',
             'route'  => 'admin.users.index',
             'icon'   => 'fas fa-fw fa-users',
             'can'  => 'admin.users.index',
         ],
         [
-            'text' => 'Roles',
+            'text' => 'Permisos',
             'route' => 'admin.roles.index',
             'icon'  => 'fas fa-fw fa-users-cog',
             'can'  =>  'admin.roles.index',
         ],
         [
-            'text' => 'Uploads',
+            'text' => 'Archivos admin ↑',
             'route' => 'admin.uploads.index',
             'icon'  => 'fas fa-fw fa-users-cog',
             'can'  =>  'admin.uploads.index',
         ],
         [
-            'text' => 'Downloads',
+            'text' => 'Bajar archivos ↓',
             'route' => 'admin.pasos.externo',
             'icon'  => 'fas fa-fw fa-users-cog',
         ],
@@ -281,60 +281,12 @@ return [
             'icon'    => 'fas fa-bell',
             //'can' => 'admin.dashboard'
         ],
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
+       [
+            'text'    => '',
+            'icon'    => '',
+            
         ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+        
     ],
 
     /*
