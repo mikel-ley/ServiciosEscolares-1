@@ -7,6 +7,7 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
@@ -18,6 +19,15 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
         @livewireStyles
+
+        <style>
+            .img {
+                padding: 0%
+                height: 100%;
+                width: 100%;
+            }
+        </style>
+
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
@@ -30,6 +40,7 @@
             <main>
                 {{ $slot }}
             </main>
+            <img class="img" src="{{ asset('IMG/Home.jpeg') }}" alt="">
         </div>
 
         @stack('modals')
@@ -39,7 +50,7 @@
         <!-- Scripts -->
         <script src="{{asset('js/app.js')}}"></script>
 
-        
+
 
     </body>
 </html>
